@@ -1,0 +1,241 @@
+body{
+    margin: 0;
+    font-family: 'Roboto' sans-serif;
+    background-color: var(--prim);
+     box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+:root{
+    --prim: rgb(220,220,220);
+    --sec:rgb(128, 0, 0);
+    --terc:rgb(255,255,204);
+}
+header{
+    max-width: 100%;
+     background-repeat: no-repeat;
+    background-size: cover;
+}
+.banimg{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+@media (max-width:  480px) {
+    .banner-derecho,.banner-izquierdo{
+        display: none;
+    }
+}
+.fondosectio{
+    background-image: url(../ima/port.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.8;
+    padding: 20px;
+}
+.let{
+    color: red;
+}
+/**cuerpo**/
+main{
+    text-align: center;
+}
+/**listado escuelas**/
+/* Asegúrate de que tu meta viewport esté en el <head> */
+/* <meta name="viewport" content="width=device-width, initial-scale=1.0"> */
+
+/* ---------------------------------------------------- */
+/* Estilos Base (Mobile First) */
+/* ---------------------------------------------------- */
+.lis {
+    display: grid; 
+    grid-template-columns: 1fr; /* Una columna para móvil */
+    gap: 15px;
+    padding: 10px;
+}
+
+.escuela-card {
+    display: flex; 
+    align-items: center; 
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    /* Para que el card sea un área de clic más grande, aunque solo el icono sea el link explícito */
+    cursor: pointer; 
+}
+
+/* Estilos del Contenedor del Ícono */
+.card-icono {
+    /* Mantiene el icono centrado */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* El enlace ahora ocupa el tamaño completo del card-icono */
+    width: 48px;
+    height: 48px;
+    margin-right: 15px;
+}
+
+/* Estilos del Enlace dentro del Icono */
+.card-icono a {
+    display: flex; /* Para que el contenido (el ícono) se centre dentro del enlace */
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* El enlace ocupa todo el 'card-icono' */
+    height: 100%;
+    text-decoration: none; /* Elimina el subrayado predeterminado del enlace */
+    color: #007bff; /* Color azul para el icono del enlace */
+}
+
+/* Estilos del Ícono de Font Awesome dentro del Enlace */
+.card-icono a i {
+    font-size: 28px; /* Tamaño del icono */
+    transition: transform 0.2s ease-in-out; /* Transición suave al pasar el ratón */
+}
+
+/* Efecto al pasar el ratón o tocar el icono */
+.card-icono a:hover i,
+.card-icono a:focus i {
+    transform: scale(1.1); /* Hace que el icono se agrande un poco */
+    color: #0056b3; /* Un color un poco más oscuro al interactuar */
+}
+
+.card-info {
+    flex-grow: 1;
+}
+
+.nombre {
+    margin: 0;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.turno {
+    margin: 4px 0 0 0;
+    font-size: 0.9em;
+    color: #555;
+}
+/**rutittas**/
+/* ---------------------------------------------------- */
+/* A. Estilos del Contenedor Principal (Celular) */
+/* ---------------------------------------------------- */
+.rut {
+    /* En celular, queremos una sola columna de recuadros */
+    display: grid; 
+    grid-template-columns: 1fr; 
+    gap: 20px; /* Espacio vertical entre cada recuadro de ruta */
+    padding: 10px; 
+    max-width: 600px; /* Limita el ancho en pantallas grandes para mantener la legibilidad */
+    margin: 0 auto; /* Centra el contenedor en la pantalla */
+}
+
+/* ---------------------------------------------------- */
+/* B. Estilos del Recuadro Individual (Card) */
+/* ---------------------------------------------------- */
+.ruta-card {
+    padding: 0; /* Eliminamos el padding del card para que el video toque los bordes */
+    border: 1px solid #e0e0e0;
+    border-radius: 8px; 
+    overflow: hidden; /* Asegura que el video y la info respeten los bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    background-color: #fff;
+}
+
+/* ---------------------------------------------------- */
+/* C. Estilos del Video (¡RESPONSIVO!) */
+/* ---------------------------------------------------- */
+.card-video {
+    width: 100%; /* Asegura que el contenedor del video ocupe todo el ancho */
+    /* Usamos un truco CSS para mantener la proporción de aspecto del video (ej. 16:9) */
+    position: relative;
+    padding-top: 56.25%; /* 56.25% es la altura para una relación de aspecto 16:9 */
+}
+
+.video-ruta {
+    position: absolute; /* Coloca el video encima del padding-top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Asegura que el video se muestre correctamente */
+    display: block; 
+    object-fit: cover; 
+}
+.escull{
+    background-color: var(--sec);
+    text-align: center;
+}
+.imant {
+  /* Establece el ancho máximo de la imagen al 100% del contenedor. */
+  /* Esto evita que la imagen se desborde en pantallas pequeñas. */
+  max-width: 100%; 
+
+  /* Permite que la altura de la imagen se ajuste automáticamente 
+     para mantener la proporción original. */
+  height: auto; 
+
+  /* Opcional: Esto asegura que la imagen se comporte como un bloque 
+     para eliminar espacios inferiores no deseados. */
+  display: block; 
+  
+  /* Opcional: Centra la imagen si su contenedor es más grande que su max-width */
+  margin-left: auto;
+  margin-right: auto;
+}
+/* 1. Hace que el contenedor del video (div) sea el 
+      punto de referencia. 
+*/
+.video-responsive {
+    /* Define el ancho máximo para evitar que el video crezca demasiado */
+    max-width: 800px; /* Ajústalo al ancho máximo que desees */
+    width: 100%;
+    margin: 0 auto; /* Centra el video en la página */
+}
+
+/* 2. Aplica el estilo responsive al elemento de video.
+*/
+.video-responsive video {
+    /* El video siempre ocupará el 100% del ancho de su div contenedor */
+    width: 100%;
+    
+    /* La altura se ajusta automáticamente para evitar distorsiones */
+    height: auto;
+    
+    /* Muestra el video como un bloque para eliminar posibles espacios */
+    display: block; 
+}
+
+/* ---------------------------------------------------- */
+/* D. Estilos de la Información */
+/* ---------------------------------------------------- */
+.card-info {
+    padding: 10px 15px 15px 15px; /* Espaciado dentro de la información */
+}
+
+.nombre-ruta {
+    margin: 0 0 5px 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.numero-camion {
+    margin: 0;
+    font-size: 1em;
+    color: #555;
+    font-weight: bold;
+}
+
+/**pie de pagina**/
+.pidpag{
+    background-color: var(--sec);
+}
+.pidpag p{
+    font-size: 0.8rem;
+}
+.pidpag p span{
+    font-size: 0.5rem;
+}
